@@ -1,6 +1,6 @@
 package models
 
 type IMDBAKA struct {
-	AKA        string
-	IMDBInfoID uint
+	AKA        string `json:"aka" binding:"required"`
+	IMDBInfoID uint   `json:"imdb_info_id" binding:"required"`
 }
