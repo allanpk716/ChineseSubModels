@@ -12,11 +12,11 @@ type VideoSubInfo struct {
 	MyLanguage   string `json:"my_language" binding:"required"`                // 这个是本程序定义的语言类型，见 my_language.go 文件
 	StoreRPath   string `json:"store_r_path"`                                  // 字幕存在出本地的哪里相对路径上，cache/CSF-ShareSubCache
 	ExtraPreName string `json:"extra_pre_name" binding:"required"`             // 字幕额外的命名信息，指 Emby 字幕命名格式(简英,subhd)，的 subhd
-	SHA1         string `json:"sha_1" binding:"required"`                      // 当前文件的 sha1 的值
+	SHA256       string `json:"sha_256" binding:"required"`                    // 当前文件的 sha256 的值
 	IsSend       bool   `json:"is_send"`                                       // 是否已经发送
 	IMDBInfoID   string `json:"imdb_info_id"  binding:"required"`              // IMDB ID
 }
 
-func NewVideoSubInfo(feature string, subName string, languageISO string, isDouble bool, chineseISO string, myLanguage string, storeFPath string, extraPreName string, sha1String string) *VideoSubInfo {
-	return &VideoSubInfo{Feature: feature, SubName: subName, LanguageISO: languageISO, IsDouble: isDouble, ChineseISO: chineseISO, MyLanguage: myLanguage, StoreRPath: storeFPath, ExtraPreName: extraPreName, SHA1: sha1String}
+func NewVideoSubInfo(feature string, subName string, languageISO string, isDouble bool, chineseISO string, myLanguage string, storeFPath string, extraPreName string, sha256String string) *VideoSubInfo {
+	return &VideoSubInfo{Feature: feature, SubName: subName, LanguageISO: languageISO, IsDouble: isDouble, ChineseISO: chineseISO, MyLanguage: myLanguage, StoreRPath: storeFPath, ExtraPreName: extraPreName, SHA256: sha256String}
 }
